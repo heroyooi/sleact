@@ -280,5 +280,5 @@ MYSQL_PASSWORD=qwer1234
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 2:30:00 이후
+  - 2일차, 다시 시작! 1:00:33
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
