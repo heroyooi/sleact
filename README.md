@@ -29,7 +29,7 @@ MYSQL_PASSWORD=qwer1234
 9. localhost:3095에서 서버 돌아가는 중
 10. 백엔드 개발자가 API.md와 typings/db.ts를 남겨둔 상황
 
-- 그밖의 지식
+- 그 밖의 지식
 
   - 오라클은 데이터베이스안에 스키마, 그 안에 테이블
   - MySQL에서는 데이터베이스와 스키마를 구별하지 않음
@@ -252,6 +252,37 @@ MYSQL_PASSWORD=qwer1234
 - 결과물이 2차원 배열 꼴로 나옴.
 - 첫 번째 인자가 주소 문자열이 아닌 주소를 리턴하는 함수
 - 이 함수의 매개변수로 페이지가 들어있어서 현재 몇 페이지인지 알 수 있음.
+
+- 그 밖의 지식
+
+  - localhost로 개발 시 로그인을 푸는 법
+
+    - 백엔드 서버를 localhost로 돌릴 때는 대부분 로그인 된 사용자의 정보를 메모리에 저장하고 있기 때문에 서버를 재기동하면 로그인이 풀린다.
+    - 백엔드 서버를 못끄는 상황에선? Application 탭에서 쿠키 정보 connect.sid(express passport에선)를 지워준다.
+
+  - 유저의 로그인 정보를 저장하고 있으려면 리덕스가 필요하다.
+  - 리덕스의 대안? contextAPI, SWR 등등이 있다.
+  - SWR: 요청을 보내서 받아온 데이터를 저장해둔다.
+    - 보통은 통상적으로 GET 요청에 대한 데이터를 SWR이 저장하고 있다.
+    - POST 요청은 SWR에 접목시키기 어렵다.
+    - swr은 next 만든 곳에서 만듦. next와 잘 어울림. But next가 없어도 잘 돌아간다.
+    - 프론트 서버와 백엔드 서버 주소가 다르면 쿠키가 생성해줄수도 없고, 보내줄 수도 없다. 그래서 axios 요청을 보낼 때 withCredentials 설정을 해줘야한다. get 요청에선 2번째 자리, post 요청에선 3번째 자리
+
+```TypeScript
+axios.get(url, { withCredentials: true })
+axios.post('http://localhost:3095/api/users/login', { email, password }, { withCredentials: true })
+```
+
+    - 쿠키는 백엔드에서 생성, 브라우저가 기억하게금 만들고, 프론트엔드는 한번 기억한 쿠키를 매 요청마다 백엔드로 보내줌
+    - 쿠키 생성은 백엔드, 보내는 것은 프론트엔드!
+    - 로그인 정보는 거의 대부분 쿠키로 저장한다. 쿠키가 안전! 쿠키삭제를 하면 로그인이 풀림.
+    - 리액트 네이티브에서는 CORS 에러같은 것이 없다. 브라우저를 쓰지 않기 때문에
+    - 배포 환경에서 브라우저와 백엔드 소통할 때 proxy 사용하지 않음
+    - proxy라는 개념은 백엔드 자체에서는 많이 쓰이는 개념이다.
+
+    - graphql 사용하는 경우는 swr를 쓸 필요가 없다. 아폴로가 동일한 기능을 제공
+    - useSWR 과 경쟁하는 react-query의 useQuery
+    - swr을 배워놓으면 react-query는 공짜
 
 ## 3일차
 
