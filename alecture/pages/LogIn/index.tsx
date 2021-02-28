@@ -7,7 +7,7 @@ import { Link, Redirect } from 'react-router-dom';
 import useSWR from 'swr';
 
 const LogIn = () => {
-  const { data, error } = useSWR('http://localhost:3095/api/users', fetcher); // 바로 서버로 요청을 보냄
+  const { data, error, revalidate, mutate } = useSWR('http://localhost:3095/api/users', fetcher);
   const [logInError, setLogInError] = useState(false);
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -23,13 +23,23 @@ const LogIn = () => {
             withCredentials: true,
           },
         )
-        .then(() => {})
+        .then((response) => {
+          mutate(response.data, false); // 두번째 인자값을 false로 하면 서버에 요청 안 보내고 로컬 UI를 그대로 수정한다.
+        })
         .catch((error) => {
           setLogInError(error.response?.data?.statusCode === 401);
         });
     },
     [email, password],
   );
+
+  if (data === undefined) {
+    return <div>로딩중...</div>;
+  }
+
+  if (data) {
+    return <Redirect to="/workspace/channel" />;
+  }
 
   // console.log(error, userData);
   // if (!error && userData) {
