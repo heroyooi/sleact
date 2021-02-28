@@ -339,5 +339,5 @@ const { data } = useSWR('hello', (key) => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 3일차 | 1:07:50
+  - 3일차 | 1:22:15
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
