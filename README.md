@@ -266,6 +266,8 @@ const { data } = useSWR('hello', (key) => {
 ```
 
     - return은 항상 hooks 보다 아래에 있어야한다. 그 위에 있으면 에러가 난다.
+    - if문, 반복문 안에 hooks가 있을 떄도 에러가 난다.
+    - 에러 메세지: Invalid hook call. Hooks can only be called inside of the body of a function copmonent.
 
 ## 3일차
 
@@ -273,6 +275,10 @@ const { data } = useSWR('hello', (key) => {
 
 - npm i gravatar @types/gravatar
 - Github같은 아이콘을 만들 수 있음
+
+21. 에러 디버깅 용으로 토스트 라이브러리 설치
+
+- npm i react-toastify
 
 22. typescript 정의
 
@@ -311,6 +317,10 @@ const { data } = useSWR('hello', (key) => {
 
 - 중첩된 route: 주소 구조가 계층적으로 되어있다면 사용해도 된다.
   - 주소 설계를 잘해놔야 route 구조 잡는 것이 원활하다.
+- input 태그가 들어있는 경우 별도로 컴포넌트로 빼는 것이 좋다.
+  - input 자체가 다른 컴포넌트들의 불필요한 리렌더링을 발생시킨다.
+  - 화면이 너무 깜빡 거리면 성능 분석할 때 어려움이 있기 때문에
+- useCallback은 async await를 사용할 수 있지만, useEffect는 에러가 난다.
 
 ## 4일차
 
@@ -339,5 +349,5 @@ const { data } = useSWR('hello', (key) => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 3일차 | 1:22:15
+  - 4일차 시작할 차례
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
