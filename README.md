@@ -318,9 +318,20 @@ const { data } = useSWR('hello', (key) => {
 - 중첩된 route: 주소 구조가 계층적으로 되어있다면 사용해도 된다.
   - 주소 설계를 잘해놔야 route 구조 잡는 것이 원활하다.
 - input 태그가 들어있는 경우 별도로 컴포넌트로 빼는 것이 좋다.
+
   - input 자체가 다른 컴포넌트들의 불필요한 리렌더링을 발생시킨다.
   - 화면이 너무 깜빡 거리면 성능 분석할 때 어려움이 있기 때문에
+
 - useCallback은 async await를 사용할 수 있지만, useEffect는 에러가 난다.
+- 아래와 같이 사용하는 것은 괜찮다.
+
+```JavaScript
+const a = useCallback(async () => {
+}, [])
+useEffect(() => {
+  a().then()
+}, [])
+```
 
 ## 4일차
 
