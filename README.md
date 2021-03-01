@@ -280,6 +280,28 @@ const { data } = useSWR('hello', (key) => {
 
 - npm i react-toastify
 
+### 그 밖의 지식
+
+- 중첩된 route: 주소 구조가 계층적으로 되어있다면 사용해도 된다.
+  - 주소 설계를 잘해놔야 route 구조 잡는 것이 원활하다.
+- input 태그가 들어있는 경우 별도로 컴포넌트로 빼는 것이 좋다.
+
+  - input 자체가 다른 컴포넌트들의 불필요한 리렌더링을 발생시킨다.
+  - 화면이 너무 깜빡 거리면 성능 분석할 때 어려움이 있기 때문에
+
+- useCallback은 async await를 사용할 수 있지만, useEffect는 에러가 난다.
+- 아래와 같이 사용하는 것은 괜찮다.
+
+```JavaScript
+const a = useCallback(async () => {
+}, [])
+useEffect(() => {
+  a().then()
+}, [])
+```
+
+## 4일차
+
 22. typescript 정의
 
 - 기본적으로 변수, 매개변수, 리턴값에 타입을 붙여주면 됨.
@@ -312,28 +334,6 @@ const { data } = useSWR('hello', (key) => {
 - 결과물이 2차원 배열 꼴로 나옴.
 - 첫 번째 인자가 주소 문자열이 아닌 주소를 리턴하는 함수
 - 이 함수의 매개변수로 페이지가 들어있어서 현재 몇 페이지인지 알 수 있음.
-
-### 그 밖의 지식
-
-- 중첩된 route: 주소 구조가 계층적으로 되어있다면 사용해도 된다.
-  - 주소 설계를 잘해놔야 route 구조 잡는 것이 원활하다.
-- input 태그가 들어있는 경우 별도로 컴포넌트로 빼는 것이 좋다.
-
-  - input 자체가 다른 컴포넌트들의 불필요한 리렌더링을 발생시킨다.
-  - 화면이 너무 깜빡 거리면 성능 분석할 때 어려움이 있기 때문에
-
-- useCallback은 async await를 사용할 수 있지만, useEffect는 에러가 난다.
-- 아래와 같이 사용하는 것은 괜찮다.
-
-```JavaScript
-const a = useCallback(async () => {
-}, [])
-useEffect(() => {
-  a().then()
-}, [])
-```
-
-## 4일차
 
 28. Workspace에 소켓 연결하기
 
