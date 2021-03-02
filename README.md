@@ -322,6 +322,10 @@ useEffect(() => {
 - react-mentions 활용
 - DM에서는 멘션 기능이 없지만 Channel에서는 있을 것
 
+25. autosize 설치
+
+- npm i autosize @types/autosize
+
 26. DM 보내보기
 
 - optimistic UI
@@ -360,5 +364,5 @@ useEffect(() => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 4일차 시작할 차례
+  - 5일차 들을 차례
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
