@@ -326,6 +326,11 @@ useEffect(() => {
 
 - npm i autosize @types/autosize
 
+## 5일차
+
+- npm i socket.io-client@2
+- npm i -D @types/socket.io-client
+
 26. DM 보내보기
 
 - optimistic UI
@@ -364,5 +369,5 @@ useEffect(() => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 5일차 들을 차례
+  - 5일차 28분
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
