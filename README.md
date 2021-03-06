@@ -328,8 +328,12 @@ useEffect(() => {
 
 ## 5일차
 
+- 프론트 추가 설치
 - npm i socket.io-client@2
 - npm i -D @types/socket.io-client
+
+- 백엔드 버전 수정
+- npm i socket.io@2
 
 26. DM 보내보기
 
@@ -358,6 +362,8 @@ useEffect(() => {
 - npm i dayjs
 - dayjs는 moment를 대체함
 
+- npm i react-mentions @types/react-mentions
+
 32. 프로파일링 하면서 Chat에 memo 적용하기
 33. 인피니트 스크롤링 구현
 34. @components/ChannelList 작성
@@ -366,8 +372,14 @@ useEffect(() => {
 37. 빌드 설정
 38. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
 
+### 그 밖의 지식
+
+- moment는 불변성을 안 지키고 있다.
+- dayjs는 moment와 api는 같으나, 불변성을 잘 지키고 있다. 그리고 매우 가볍다.
+- 키워드: EachMention
+
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 5일차 28분
+  - 5일차 1:31:30 / 채팅 목록이 안나온다.. 뭣땜인지 찾아내야함..
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
