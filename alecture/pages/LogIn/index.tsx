@@ -24,7 +24,8 @@ const LogIn = () => {
           },
         )
         .then((response) => {
-          mutate(response.data, false); // 두번째 인자값을 false로 하면 서버에 요청 안 보내고 로컬 UI를 그대로 수정한다.
+          // mutate(response.data, false); // 두번째 인자값을 false로 하면 서버에 요청 안 보내고 로컬 UI를 그대로 수정한다.
+          revalidate();
         })
         .catch((error) => {
           setLogInError(error.response?.data?.statusCode === 401);
