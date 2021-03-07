@@ -361,9 +361,7 @@ useEffect(() => {
 - npm i react-custom-scrollbars @types/react-custom-scrollbars
   - alecture/components/ChatList: react-custom-scrollbars 사용 컴포넌트
 
-32. makeSection 구현
-
-33. 날짜 라이브러리 적용 (Chat)
+32. 날짜 라이브러리 적용 (Chat)
 
 - npm i dayjs
 - dayjs는 moment를 대체함
@@ -375,19 +373,24 @@ useEffect(() => {
 - npm i react-mentions @types/react-mentions
   - alecture/components/ChatBox: react-mentions 사용 컴포넌트
 
-33. 정규표현식 (Chat)
+34. 정규표현식 (Chat)
 
 - npm i regexify-string
   - alecture/components/Chat: regexify-string 사용 컴포넌트
 
-34. 프로파일링 하면서 Chat에 memo 적용하기
+35. 프로파일링 하면서 Chat에 memo 적용하기
 
-35. 인피니트 스크롤링 구현
-36. @components/ChannelList 작성
-37. @pages/ChannelMessage 작성
-38. Channel Chat 보내보기
-39. 빌드 설정
-40. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
+36. makeSection 구현
+
+37. 인피니트 스크롤링 구현
+
+## 6일차
+
+38. @components/ChannelList 작성
+39. @pages/ChannelMessage 작성
+40. Channel Chat 보내보기
+41. 빌드 설정
+42. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
 
 ### 그 밖의 지식
 
@@ -398,5 +401,5 @@ useEffect(() => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 5일차 1:56:00
+  - 5일차 2:50:20
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
