@@ -14,9 +14,9 @@ const ChatList: VFC<Props> = ({ chatData }) => {
   return (
     <ChatZone>
       <Scrollbars autoHide ref={scrollbarRef} onScrollFrame={onScroll}>
-        {chatData?.map((chat) => {
-          <Chat key={chat.id} data={chat} />;
-        })}
+        {chatData?.map((chat) => (
+          <Chat key={chat.id} data={chat} />
+        ))}
       </Scrollbars>
     </ChatZone>
   );
