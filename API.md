@@ -35,7 +35,7 @@ HTTP 요청 리스트(ajax)
 - query: { perPage: number(한 페이지 당 몇 개), page: number(페이지) }
 - return: IChat[]
 
-### POST /workspaces/:workspace/channels/:channel/chat
+### POST /workspaces/:workspace/channels/:channel/chats
 
 - :workspace 내부의 :channel의 채팅을 저장
 - body: { content: string(내용) }

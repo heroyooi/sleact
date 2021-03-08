@@ -176,18 +176,18 @@ MYSQL_PASSWORD=qwer1234
 - 3초 룰 기억하자!
 - npm i @loadable/component @types/loadable\_\_component
 
-13. emotion 세팅
+16. emotion 세팅
 
 - styled components와 비슷하지만 설정이 간단함.
 - npm i @emotion/react @emotion/styled
 - npm i -D babel-plugin-emotion (웹팩에 babel 설정 추가)
 - 스타일드 컴포넌트로 만들 때 변수를 많이 만드는 셈이므로 & 같은 선택자 적극 활용해야 변수 이름짓기를 최소화할 수 있음.
 
-16. @pages/SignUp 작성
+17. @pages/SignUp 작성
 
 ## 2일차
 
-17. 회원가입 axios로 진행
+18. 회원가입 axios로 진행
 
 - npm i axios
 - CORS 문제를 피하기 위해서 devServer에 proxy 세팅
@@ -195,14 +195,14 @@ MYSQL_PASSWORD=qwer1234
 - 같은 도메인의 서버로 요청을 보내거나, 서버끼리 요청을 보낼 때는 발생하지 않음
 - 따라서 같은 도메인인 proxy서버를 띄워 CORS를 피해갈 수 있음.
 
-18. useInput 커스텀 훅 만들기
+19. useInput 커스텀 훅 만들기
 
 - 커스텀 훅으로 훅들간에 중복된 것을 제거할 수 있음
 - 훅 내부에 훅을 작성할 수 있는 유일한 케이스
 - useCallback은 return 안에 들어있는 함수에 꼭 적용해주자
 - useMemo는 return 안에 들어있는 값에 적용하자
 
-19. @pages/LogIn 작성 및 SWR
+20. @pages/LogIn 작성 및 SWR
 
 - 로그인 한 사람이 회원가입/로그인 페이지에 접근한다면?
 - GET 요청은 SWR로 하는 것도 괜찮음
@@ -211,7 +211,7 @@ MYSQL_PASSWORD=qwer1234
 - 로그인했음을 증명하기 위해 withCredentials: true 잊으면 안 됨.
 - swr 옵션들에 대한 설명
 
-20. @layouts/Workspace 작성
+21. @layouts/Workspace 작성
 
 - 눈에 띄는 구역 단위로 스타일드컴포넌트로 만들어둠.
 - 구역 내부의 태그들은 스타일드컴포넌트로 만들면 변수명 지어야 하니 css선택자로 선택
@@ -271,12 +271,12 @@ const { data } = useSWR('hello', (key) => {
 
 ## 3일차
 
-21. 그라바타
+22. 그라바타
 
 - npm i gravatar @types/gravatar
 - Github같은 아이콘을 만들 수 있음
 
-21. 에러 디버깅 용으로 토스트 라이브러리 설치
+23. 에러 디버깅 용으로 토스트 라이브러리 설치
 
 - npm i react-toastify
 
@@ -302,27 +302,27 @@ useEffect(() => {
 
 ## 4일차
 
-22. typescript 정의
+24. typescript 정의
 
 - 기본적으로 변수, 매개변수, 리턴값에 타입을 붙여주면 됨.
 - 남이 타이핑해둔 것 분석하는 게 어려움
 - Go to Type Definition
 - 자바스크립트 라이브러리 작성자와는 다른 사람이 만든 ts 라이브러리가 @types로 시작하는 것들
 
-23. @components/DMList 작성
+25. @components/DMList 작성
 
 - 현재 채널 참여자 목록 가져오기
 
-24. @pages/DirectMessage 작성
+26. @pages/DirectMessage 작성
 
 - Header와 ChatList, ChatBox로 구성
 
-25. @components/ChatBox 먼저 작성
+27. @components/ChatBox 먼저 작성
 
 - react-mentions 활용
 - DM에서는 멘션 기능이 없지만 Channel에서는 있을 것
 
-26. autosize 설치 (ChatBox)
+28. autosize 설치 (ChatBox)
 
 - npm i autosize @types/autosize
   - alecture/components/ChatBox: autosize 사용 컴포넌트
@@ -336,61 +336,66 @@ useEffect(() => {
 - 백엔드 버전 수정
 - npm i socket.io@2
 
-26. DM 보내보기
+29. DM 보내보기
 
 - optimistic UI
 - 먼저 프론트에서 표시하고, 서버로는 그 다음에 요청보냄
 - 요청 실패하는 순간 프론트에서 제거하고 에러 메시지 띄움
 - 보낼 때 에러가난 것은 서버쪽에서 socket 연결 여부를 확인하기 때문
 
-27. DM 로딩은 useSWRInfinite 사용
+30. DM 로딩은 useSWRInfinite 사용
 
 - 결과물이 2차원 배열 꼴로 나옴.
 - 첫 번째 인자가 주소 문자열이 아닌 주소를 리턴하는 함수
 - 이 함수의 매개변수로 페이지가 들어있어서 현재 몇 페이지인지 알 수 있음.
 
-28. Workspace에 소켓 연결하기
+31. Workspace에 소켓 연결하기
 
 - socket.emit이 클라이언트에서 서버로, socket.on이 서버에서 클라이언트로
 
-29. DMList에 onlineList, dm 이벤트 연결
-30. @components/ChatList 작성 및 @components/Chat 구현
+32. DMList에 onlineList, dm 이벤트 연결
+33. @components/ChatList 작성 및 @components/Chat 구현
 
-31. 디자인 스크롤바 적용 (ChatList)
+34. 디자인 스크롤바 적용 (ChatList)
 
 - npm i react-custom-scrollbars @types/react-custom-scrollbars
   - alecture/components/ChatList: react-custom-scrollbars 사용 컴포넌트
 
-32. 날짜 라이브러리 적용 (Chat)
+35. 날짜 라이브러리 적용 (Chat)
 
 - npm i dayjs
 - dayjs는 moment를 대체함
 
   - alecture/components/Chat: dayjs 사용 컴포넌트
 
-33. 멘션 기능 적용 (ChatBox)
+36. 멘션 기능 적용 (ChatBox)
 
 - npm i react-mentions @types/react-mentions
   - alecture/components/ChatBox: react-mentions 사용 컴포넌트
 
-34. 정규표현식 (Chat)
+37. 정규표현식 (Chat)
 
 - npm i regexify-string
   - alecture/components/Chat: regexify-string 사용 컴포넌트
 
-35. 프로파일링 하면서 Chat에 memo 적용하기
+38. 프로파일링 하면서 Chat에 memo 적용하기
 
-36. makeSection 구현
+39. makeSection 구현
 
-37. 인피니트 스크롤링 구현
+40. 인피니트 스크롤링 구현
 
 ## 6일차
 
-38. @components/ChannelList 작성
-39. @pages/ChannelMessage 작성
-40. Channel Chat 보내보기
-41. 빌드 설정
-42. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
+41. @components/ChannelList 작성
+42. @pages/ChannelMessage 작성
+43. Channel Chat 보내보기
+
+44. 빌드 설정
+
+- npm i webpack-bundle-analyzer @types/webpack-bundle-analyzer
+- npm run build
+
+45. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
 
 ### 그 밖의 지식
 
@@ -401,5 +406,5 @@ useEffect(() => {
 # 강좌
 
 - [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 5일차 2:50:20
+  - 6일차 50:00
   - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
