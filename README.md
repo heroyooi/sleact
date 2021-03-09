@@ -397,14 +397,34 @@ useEffect(() => {
 
 45. 빌드 결과물인 JS와 html을 서버개발자에게 전달하기
 
+- dist 폴더와 index.html 파일을 전달하면 된다. (수동)
+- cicd
+
 ### 그 밖의 지식
 
 - moment는 불변성을 안 지키고 있다.
 - dayjs는 moment와 api는 같으나, 불변성을 잘 지키고 있다. 그리고 매우 가볍다.
 - 키워드: EachMention
 
+# aNest
+
+```command
+npm i -g @nestjs/cli
+nest new aNest
+cd a-nest
+npm run start
+```
+
+## Hot reload
+
+```command
+npm i --save-dev webpack-node-externals run-script-webpack-plugin webpack
+npm run start:dev
+```
+
+- 아래 공식 문서보고 순서대로 진행하면 된다.
+- [공식 문서](https://docs.nestjs.com/recipes/hot-reload)
+
 # 강좌
 
-- [유튜브 스트리밍](https://www.youtube.com/watch?v=Q2DlJKLNH1w)
-  - 6일차 50:00
-  - 2주간 촬영하고나서 2주동안 스트리밍, 편집본 무료공개 3/15정도까지 볼 수 있음
+- [슬랙 nest | 50:30](https://youtu.be/8jMAo5WI1Dg)
