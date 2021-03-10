@@ -427,4 +427,4 @@ npm run start:dev
 
 # 강좌
 
-- [슬랙 nest | 50:30](https://youtu.be/8jMAo5WI1Dg)
+- [슬랙 nest | 1:10:10](https://youtu.be/8jMAo5WI1Dg)
